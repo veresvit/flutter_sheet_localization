@@ -9,7 +9,7 @@ part of 'localizations.dart';
 // ignore_for_file: camel_case_types
 
 class AppLocalizations {
-  AppLocalizations(this.locale) : labels = languages[locale]!;
+  AppLocalizations(this.locale) : labels = languages[locale];
 
   final Locale locale;
 
@@ -20,8 +20,8 @@ class AppLocalizations {
         weekday: AppLocalizations_Labels_Dates_Weekday(
           monday: 'LUNDI',
           tuesday: 'Mardi',
-          wednesday: 'mercredi',
-          thursday: 'jeudi',
+          wednesday: 'Mercredi',
+          thursday: 'Jeudi',
           friday: 'Vendredi',
           saturday: 'samedi',
           sunday: 'dimanche',
@@ -34,24 +34,23 @@ class AppLocalizations {
         ),
       ),
       templated: AppLocalizations_Labels_Templated(
-        hello: ({required firstName}) => '''Bonjour ${firstName}!''',
-        contact: (condition, {required lastName}) {
+        hello: ({firstName}) => '''Bonjour ${firstName}!''',
+        contact: (condition, {lastName}) {
           if (condition == Gender.male) return '''M. ${lastName}''';
           if (condition == Gender.female) return '''Mme ${lastName}''';
           throw Exception();
         },
         numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({required count}) =>
+          count: ({count}) =>
               '''Il y a ${NumberFormat(null, 'fr').format(count)} éléments.''',
-          simple: ({required price}) =>
+          simple: ({price}) =>
               '''Le prix est de ${NumberFormat(null, 'fr').format(price)}€''',
-          formatted: ({required price}) =>
+          formatted: ({price}) =>
               '''Le prix est de ${NumberFormat.compactCurrency(locale: 'fr').format(price)}''',
         ),
         date: AppLocalizations_Labels_Templated_Date(
-          simple: ({required date}) =>
-              '''Aujourd'hui : ${date.toIso8601String()}''',
-          pattern: ({required date}) =>
+          simple: ({date}) => '''Aujourd'hui : ${date.toIso8601String()}''',
+          pattern: ({date}) =>
               '''Aujourd'hui : ${DateFormat('EEE, M/d/y', 'fr').format(date)}''',
         ),
       ),
@@ -84,23 +83,23 @@ class AppLocalizations {
         ),
       ),
       templated: AppLocalizations_Labels_Templated(
-        hello: ({required firstName}) => '''Hello ${firstName}!''',
-        contact: (condition, {required lastName}) {
+        hello: ({firstName}) => '''Hello ${firstName}!''',
+        contact: (condition, {lastName}) {
           if (condition == Gender.male) return '''Mr ${lastName}!''';
           if (condition == Gender.female) return '''Mrs ${lastName}!''';
           throw Exception();
         },
         numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({required count}) =>
+          count: ({count}) =>
               '''There are ${NumberFormat(null, 'en').format(count)}\ items.''',
-          simple: ({required price}) =>
+          simple: ({price}) =>
               '''The price is ${NumberFormat(null, 'en').format(price)}\$''',
-          formatted: ({required price}) =>
+          formatted: ({price}) =>
               '''The price is ${NumberFormat.compactCurrency(locale: 'en').format(price)}''',
         ),
         date: AppLocalizations_Labels_Templated_Date(
-          simple: ({required date}) => '''Today : ${date.toIso8601String()}''',
-          pattern: ({required date}) =>
+          simple: ({date}) => '''Today : ${date.toIso8601String()}''',
+          pattern: ({date}) =>
               '''Today : ${DateFormat('EEE, M/d/y', 'en').format(date)}''',
         ),
       ),
@@ -117,7 +116,7 @@ class AppLocalizations {
         languageCode: 'zh',
         scriptCode: 'Hans',
         countryCode: 'CN'): AppLocalizations_Labels(
-      multiline: '这是\n\n一个\n\n多例子。',
+      multiline: '这是\n\n一种\n\n多例子。',
       dates: AppLocalizations_Labels_Dates(
         weekday: AppLocalizations_Labels_Dates_Weekday(
           monday: '星期一',
@@ -136,23 +135,23 @@ class AppLocalizations {
         ),
       ),
       templated: AppLocalizations_Labels_Templated(
-        hello: ({required firstName}) => '''你好${firstName}!''',
-        contact: (condition, {required lastName}) {
+        hello: ({firstName}) => '''你好${firstName}!''',
+        contact: (condition, {lastName}) {
           if (condition == Gender.male) return '''先生${lastName}''';
           if (condition == Gender.female) return '''夫人${lastName}''';
           throw Exception();
         },
         numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({required count}) =>
+          count: ({count}) =>
               '''${NumberFormat(null, 'zh-Hans-CN').format(count)}個のアイテムがあります''',
-          simple: ({required price}) =>
+          simple: ({price}) =>
               '''価格は${NumberFormat(null, 'zh-Hans-CN').format(price)}¥です''',
-          formatted: ({required price}) =>
+          formatted: ({price}) =>
               '''価格は${NumberFormat.compactCurrency(locale: 'zh-Hans-CN').format(price)}です''',
         ),
         date: AppLocalizations_Labels_Templated_Date(
-          simple: ({required date}) => '''今日 : ${date.toIso8601String()}''',
-          pattern: ({required date}) =>
+          simple: ({date}) => '''今日 : ${date.toIso8601String()}''',
+          pattern: ({date}) =>
               '''今日 : ${DateFormat('EEE, M/d/y', 'zh-Hans-CN').format(date)}''',
         ),
       ),
@@ -170,7 +169,7 @@ class AppLocalizations {
   final AppLocalizations_Labels labels;
 
   static AppLocalizations_Labels of(BuildContext context) =>
-      Localizations.of<AppLocalizations>(context, AppLocalizations)!.labels;
+      Localizations.of<AppLocalizations>(context, AppLocalizations)?.labels;
 }
 
 enum Gender {
@@ -185,13 +184,13 @@ enum Plural {
 
 class AppLocalizations_Labels_Dates_Weekday {
   const AppLocalizations_Labels_Dates_Weekday(
-      {required this.monday,
-      required this.tuesday,
-      required this.wednesday,
-      required this.thursday,
-      required this.friday,
-      required this.saturday,
-      required this.sunday});
+      {this.monday,
+      this.tuesday,
+      this.wednesday,
+      this.thursday,
+      this.friday,
+      this.saturday,
+      this.sunday});
 
   final String monday;
 
@@ -231,10 +230,7 @@ class AppLocalizations_Labels_Dates_Weekday {
 
 class AppLocalizations_Labels_Dates_Month {
   const AppLocalizations_Labels_Dates_Month(
-      {required this.january,
-      required this.february,
-      required this.march,
-      required this.april});
+      {this.january, this.february, this.march, this.april});
 
   final String january;
 
@@ -261,8 +257,7 @@ class AppLocalizations_Labels_Dates_Month {
 }
 
 class AppLocalizations_Labels_Dates {
-  const AppLocalizations_Labels_Dates(
-      {required this.weekday, required this.month});
+  const AppLocalizations_Labels_Dates({this.weekday, this.month});
 
   final AppLocalizations_Labels_Dates_Weekday weekday;
 
@@ -277,21 +272,21 @@ class AppLocalizations_Labels_Dates {
 }
 
 typedef AppLocalizations_Labels_Templated_hello = String Function(
-    {required String firstName});
+    {@required String firstName});
 typedef AppLocalizations_Labels_Templated_contact = String
-    Function(Gender condition, {required String lastName});
+    Function(Gender condition, {@required String lastName});
 typedef AppLocalizations_Labels_Templated_Numbers_count = String Function(
-    {required int count});
+    {@required int count});
 typedef AppLocalizations_Labels_Templated_Numbers_simple = String Function(
-    {required double price});
+    {@required double price});
 typedef AppLocalizations_Labels_Templated_Numbers_formatted = String Function(
-    {required double price});
+    {@required double price});
 
 class AppLocalizations_Labels_Templated_Numbers {
   const AppLocalizations_Labels_Templated_Numbers(
-      {required AppLocalizations_Labels_Templated_Numbers_count count,
-      required AppLocalizations_Labels_Templated_Numbers_simple simple,
-      required AppLocalizations_Labels_Templated_Numbers_formatted formatted})
+      {AppLocalizations_Labels_Templated_Numbers_count count,
+      AppLocalizations_Labels_Templated_Numbers_simple simple,
+      AppLocalizations_Labels_Templated_Numbers_formatted formatted})
       : _count = count,
         _simple = simple,
         _formatted = formatted;
@@ -309,26 +304,26 @@ class AppLocalizations_Labels_Templated_Numbers {
     }
   }
 
-  String count({required int count}) => _count(
+  String count({@required int count}) => _count(
         count: count,
       );
-  String simple({required double price}) => _simple(
+  String simple({@required double price}) => _simple(
         price: price,
       );
-  String formatted({required double price}) => _formatted(
+  String formatted({@required double price}) => _formatted(
         price: price,
       );
 }
 
 typedef AppLocalizations_Labels_Templated_Date_simple = String Function(
-    {required DateTime date});
+    {@required DateTime date});
 typedef AppLocalizations_Labels_Templated_Date_pattern = String Function(
-    {required DateTime date});
+    {@required DateTime date});
 
 class AppLocalizations_Labels_Templated_Date {
   const AppLocalizations_Labels_Templated_Date(
-      {required AppLocalizations_Labels_Templated_Date_simple simple,
-      required AppLocalizations_Labels_Templated_Date_pattern pattern})
+      {AppLocalizations_Labels_Templated_Date_simple simple,
+      AppLocalizations_Labels_Templated_Date_pattern pattern})
       : _simple = simple,
         _pattern = pattern;
 
@@ -343,20 +338,20 @@ class AppLocalizations_Labels_Templated_Date {
     }
   }
 
-  String simple({required DateTime date}) => _simple(
+  String simple({@required DateTime date}) => _simple(
         date: date,
       );
-  String pattern({required DateTime date}) => _pattern(
+  String pattern({@required DateTime date}) => _pattern(
         date: date,
       );
 }
 
 class AppLocalizations_Labels_Templated {
   const AppLocalizations_Labels_Templated(
-      {required AppLocalizations_Labels_Templated_hello hello,
-      required AppLocalizations_Labels_Templated_contact contact,
-      required this.numbers,
-      required this.date})
+      {AppLocalizations_Labels_Templated_hello hello,
+      AppLocalizations_Labels_Templated_contact contact,
+      this.numbers,
+      this.date})
       : _hello = hello,
         _contact = contact;
 
@@ -375,10 +370,10 @@ class AppLocalizations_Labels_Templated {
     }
   }
 
-  String hello({required String firstName}) => _hello(
+  String hello({@required String firstName}) => _hello(
         firstName: firstName,
       );
-  String contact(Gender condition, {required String lastName}) => _contact(
+  String contact(Gender condition, {@required String lastName}) => _contact(
         condition,
         lastName: lastName,
       );
@@ -388,7 +383,7 @@ typedef AppLocalizations_Labels_Plurals_man = String Function(Plural condition);
 
 class AppLocalizations_Labels_Plurals {
   const AppLocalizations_Labels_Plurals(
-      {required AppLocalizations_Labels_Plurals_man man})
+      {AppLocalizations_Labels_Plurals_man man})
       : _man = man;
 
   final AppLocalizations_Labels_Plurals_man _man;
@@ -407,10 +402,7 @@ class AppLocalizations_Labels_Plurals {
 
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
-      {required this.multiline,
-      required this.dates,
-      required this.templated,
-      required this.plurals});
+      {this.multiline, this.dates, this.templated, this.plurals});
 
   final String multiline;
 
