@@ -1,3 +1,29 @@
+## 5.1.7
+
+- Upgraded dependencies
+
+## 5.1.6
+
+- Upgraded dependencies
+
+## 5.1.3
+
+- Upgraded dependencies
+
+## 5.1.2
+
+- Upgraded dependencies
+
+## 5.1.1
+
+- Upgraded dependencies
+
+## 5.1.0
+
+- Upgraded dependencies
+- Added JSON serialization support
+- Added support for null safety.
+
 ## 3.0.0
 
 - Upgraded dependencies.
