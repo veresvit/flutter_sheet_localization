@@ -8,9 +8,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter 
-  logging: ^1.0.0
-  http: ^0.13.0
-  csv:
+  logging: ^1.0.2
+  http: ^0.13.4
+  csv: ^5.0.1
+  
   template_string:
+    path: ../../template_string
+  
   localization_builder: 
     path: ../
