@@ -13,9 +13,7 @@ dependencies:
   csv: ^5.0.1
   
   template_string: #^0.6.0
-    git:
-      url: https://github.com/salehahmedZ/flutter_sheet_localization.git
-      path: template_string
+    path: ../../template_string
   
   localization_builder: 
       path: ../
