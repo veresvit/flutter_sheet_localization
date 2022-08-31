@@ -20,8 +20,9 @@ dependencies:
   source_gen: ^1.2.2
 
   flutter_sheet_localization: #^5.1.1
-    path: ../flutter_sheet_localization
-
+    git:
+      url: https://github.com/salehahmedZ/flutter_sheet_localization.git
+      path: flutter_sheet_localization
 
   build: ^2.3.0
   analyzer: ^4.6.0
@@ -29,7 +30,9 @@ dependencies:
   intl: ^0.17.0
 
   localization_builder: #^0.15.7
-    path: ../localization_builder
+    git:
+      url: https://github.com/salehahmedZ/flutter_sheet_localization.git
+      path: localization_builder
 
 
 dev_dependencies:
