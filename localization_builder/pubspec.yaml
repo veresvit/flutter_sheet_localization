@@ -17,12 +17,12 @@ dependencies:
       url: https://github.com/salehahmedZ/flutter_sheet_localization.git
       path: template_string
   
-  recase: ^4.0.0
+  recase: ^4.1.0
   yaml: ^3.1.1
   equatable: ^2.0.5
   collection: ^1.16.0
   dart_style: ^2.2.4
-  logging: ^1.0.2
+  logging: ^1.1.0
 
 dev_dependencies:
   pedantic: ^1.11.1
