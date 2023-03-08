@@ -20,8 +20,8 @@ dependencies:
     sdk: flutter
 
   template_string: #^0.6.0
-    git:
-      url: https://github.com/salehahmedZ/flutter_sheet_localization.git
+    git
+      url: https://github.com/veresvit/flutter_sheet_localization.git
       path: template_string
 
 dev_dependencies:
